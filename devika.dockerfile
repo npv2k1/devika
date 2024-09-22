@@ -25,8 +25,9 @@ RUN playwright install-deps chromium
 RUN playwright install chromium
 
 COPY src /home/nonroot/devika/src
-COPY config.toml /home/nonroot/devika/
+# COPY config.toml /home/nonroot/devika/
 COPY sample.config.toml /home/nonroot/devika/
+RUN cp /home/nonroot/devika/sample.config.toml /home/nonroot/devika/config.toml
 COPY devika.py /home/nonroot/devika/
 RUN chown -R nonroot:nonroot /home/nonroot/devika
 
